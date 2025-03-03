@@ -7,13 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".view.SplashActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:textSize="32sp"
+        android:padding="100dp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_gasolina_e_etanol">
+
+    </TextView>
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="117dp"
-        android:layout_height="131dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="283dp"
-        android:src="@mipmap/ic_launcher"
+        android:layout_width="309dp"
+        android:layout_height="387dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="280dp"
+        android:src="@drawable/combustivel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">AppGasEta</string>
-    <string name="txt_titulo">Gasolia X Etanol</string>
+    <string name="txt_titulo">Gasolina X Etanol</string>
     <string name="txt_hint_edit_gasolina">R$ Gasolina</string>
     <string name="txt_hint_edit_etanol">R$ Etanol</string>
     <string name="txt_hint_edit_nome_do_curso">Nome do Curso Desejado</string>
@@ -11,4 +11,5 @@
     <string name="txt_button_finalizar">FINALIZAR</string>
     <string name="txt_resultado">Resultado</string>
     <string name="btnfinalizar">Finalizar</string>
+    <string name="app_gasolina_e_etanol">App Gasolina e Etanol</string>
 </resources>
