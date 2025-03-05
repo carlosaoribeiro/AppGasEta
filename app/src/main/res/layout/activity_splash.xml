@@ -10,21 +10,24 @@
     <TextView
         android:id="@+id/textView"
         android:textSize="32sp"
-        android:padding="100dp"
+        android:padding="52dp"
         android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_gasolina_e_etanol">
-
-    </TextView>
+        android:text="@string/app_gasolina_e_etanol"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="309dp"
         android:layout_height="387dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="280dp"
         android:src="@drawable/combustivel"
+        app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

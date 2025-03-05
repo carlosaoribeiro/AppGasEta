@@ -14,8 +14,8 @@ public class PessoaController {
     SharedPreferences.Editor listavip;
 
     // Construtor para inicializar SharedPreferences
-    public PessoaController(MainActivity mainActivity) {
-        preferences = mainActivity.getPreferences(MainActivity.MODE_PRIVATE); // Definido modo private corretamente
+    public PessoaController(MainActivity activity) {
+        preferences = activity.getPreferences(MainActivity.MODE_PRIVATE); // Definido modo private corretamente
         listavip = preferences.edit();
     }
 
