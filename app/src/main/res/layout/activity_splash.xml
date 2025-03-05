@@ -24,7 +24,7 @@
         android:id="@+id/imageView"
         android:layout_width="309dp"
         android:layout_height="387dp"
-        android:src="@drawable/combustivel"
+        android:src="@drawable/gaseta"
         app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

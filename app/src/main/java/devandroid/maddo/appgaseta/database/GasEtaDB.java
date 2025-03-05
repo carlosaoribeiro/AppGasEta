@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,16 +23,9 @@ public class GasEtaDB extends SQLiteOpenHelper {
     Cursor cursor;
     SQLiteDatabase db;
 
-
-
-
-    public GasEtaDB(Context context) {
-        super(context, DB_NAME, null, DB_VERSION);
-
-        db = getWritableDatabase();
+    public GasEtaDB(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
     }
-
-
 
 
     @Override
@@ -44,11 +39,11 @@ public class GasEtaDB extends SQLiteOpenHelper {
     }
 
 
-    public void saveObj(String tableName, ContentValues data){
+    public void saveObj(String tableName, ContentValues data) {
         db.insert(tableName, null, data);
     }
 
-    public List<Combustivel> listData(){
+    public List<Combustivel> listData() {
 
         List<Combustivel> lista = new ArrayList<>();
         String querySQL = "SELECT * FROM Combustivel";
@@ -57,8 +52,8 @@ public class GasEtaDB extends SQLiteOpenHelper {
 
         cursor = db.rawQuery(READ_QUERY, null);
 
-        if(cursor.moveToFirst()){
-            do{
+        if (cursor.moveToFirst()) {
+            do {
                 dbRegister = new Combustivel();
 
                 dbRegister.setId(cursor.getInt(0));
@@ -67,8 +62,8 @@ public class GasEtaDB extends SQLiteOpenHelper {
                 dbRegister.setSuggestion(cursor.getString(3));
 
                 lista.add(dbRegister);
-            }while(cursor.moveToNext());
-        }else{
+            } while (cursor.moveToNext());
+        } else {
             //
         }
 
@@ -76,7 +71,7 @@ public class GasEtaDB extends SQLiteOpenHelper {
     }
 
 
-    public void updateData(String table, ContentValues data){
+    public void updateData(String table, ContentValues data) {
 
         int id = data.getAsInteger("id"); //field from db table
 
@@ -84,7 +79,7 @@ public class GasEtaDB extends SQLiteOpenHelper {
     }
 
 
-    public void deleteData(String table, int id){
+    public void deleteData(String table, int id) {
 
         db.delete(table, "id=?", new String[]{Integer.toString(id)});
     }

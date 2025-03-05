@@ -1,13 +1,13 @@
 package devandroid.maddo.appgaseta.controller;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.SharedPreferences;
-
+import android.database.sqlite.SQLiteDatabase;
+import androidx.annotation.Nullable;
 import java.util.List;
-
 import devandroid.maddo.appgaseta.database.GasEtaDB;
 import devandroid.maddo.appgaseta.model.Combustivel;
-import devandroid.maddo.appgaseta.view.MainActivity;
 
 public class CombustivelController extends GasEtaDB {
 
@@ -15,12 +15,8 @@ public class CombustivelController extends GasEtaDB {
     SharedPreferences.Editor preferencesData;
     public static final String PREFERENCES_NAME = "pref_gaseta";
 
-
-    public CombustivelController(MainActivity mainActivity) {
-        super(mainActivity);
-        preferences = mainActivity.getSharedPreferences(PREFERENCES_NAME, 0);
-
-        preferencesData = preferences.edit();
+    public CombustivelController(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
     }
 
 
